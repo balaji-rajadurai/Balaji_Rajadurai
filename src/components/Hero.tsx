@@ -22,16 +22,6 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenResume }) => {
         <div className="lg:col-span-7 flex flex-col justify-center">
           
           {/* Unboxed Metadata Tagline */}
-          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wide text-emerald-600 dark:text-emerald-400 mb-4">
-            <span className="flex items-center gap-1">
-              <Award className="w-3.5 h-3.5 text-emerald-500" />
-              <span>M.Tech in Structural Engineering (NIT Calicut)</span>
-            </span>
-            <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
-            <span>10+ Years Experience</span>
-            <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">·</span>
-            <span className="text-slate-500 dark:text-slate-400">Computational &amp; AI Systems</span>
-          </div>
 
           {/* Name & Professional Positioning */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 leading-[1.12] mb-4">
@@ -44,32 +34,17 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenResume }) => {
 
           {/* User's Exact Professional Summary */}
           <div className="space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
-            <p>
+            <p className="text-justify">
               I am a postgraduate Structural Engineer with an <strong className="font-semibold text-slate-900 dark:text-slate-100">M.Tech from NIT Calicut</strong> and over <strong className="font-semibold text-slate-900 dark:text-slate-100">10 years of experience</strong> in structural engineering, computational design, engineering optimization and digital engineering.
             </p>
-            <p>
+            <p className="text-justify">
               My work focuses on <strong className="font-semibold text-slate-900 dark:text-slate-100">bridging conventional structural engineering with intelligent computational systems</strong>. I develop engineering automation solutions, optimization frameworks and AI-powered applications that aim to understand engineering intent, construct structural models, perform analysis, validate solutions and improve engineering workflows.
             </p>
           </div>
 
           {/* Primary Action Buttons */}
           <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => onNavigate('projects')}
-              className="flex items-center gap-2 px-5 py-3 text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-xl transition-all shadow-sm"
-            >
-              <Layers className="w-4 h-4 text-emerald-400 dark:text-emerald-100" />
-              <span>Explore Engineering Systems</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
-            <button
-              onClick={() => onNavigate('digital-twin')}
-              className="group flex items-center gap-2 px-5 py-3 text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/60 border border-emerald-200 dark:border-emerald-800/80 rounded-xl transition-colors"
-            >
-              <Sparkles className="w-4 h-4 text-emerald-500 group-hover:rotate-12 transition-transform" />
-              <span>Ask My Digital Twin</span>
-            </button>
+            
 
             <button
               onClick={onOpenResume}
@@ -77,14 +52,6 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenResume }) => {
             >
               View Full CV &rarr;
             </button>
-          </div>
-
-          {/* Engineering Grounding Note */}
-          <div className="mt-8 pt-6 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center gap-2.5 text-xs text-slate-500 dark:text-slate-400">
-            <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
-            <span>
-              Deterministic finite element checks · IS 456 / IS 800 / Eurocode / ACI 318 · Zero-hallucination engineering mechanics.
-            </span>
           </div>
 
         </div>

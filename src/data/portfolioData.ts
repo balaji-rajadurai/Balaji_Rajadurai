@@ -36,11 +36,11 @@ export const BALAJI_DATA = {
     name: "Balaji Rajadurai",
     credentials: "M.Tech (Structural Engineering) · NIT Calicut",
     experience: "10+ Years Professional Experience",
-    positioning: "Structural Engineer | AI Systems Developer | Design Automation Specialist",
-    email: "balajir333@gmail.com",
-    github: "https://github.com/balajir333",
+    positioning: "Structural Engineer | Design Automations Developer | AI Engineer",
+    email: "rbala1@live.com",
+    github: "https://github.com/balaji-rajadurai",
     linkedin: "https://linkedin.com/in/balaji-rajadurai",
-    location: "India / Available Globally for Remote & Consulting",
+    location: "Chennai, India",
     tagline: "Bridging conventional structural engineering with intelligent computational systems, automation frameworks, and AI workflows.",
     professionalSummary: "I am a postgraduate Structural Engineer with an M.Tech from NIT Calicut and over 10 years of experience in structural engineering, computational design, engineering optimization and digital engineering.\n\nMy work focuses on bridging conventional structural engineering with intelligent computational systems. I develop engineering automation solutions, optimization frameworks and AI-powered applications that aim to understand engineering intent, construct structural models, perform analysis, validate solutions and improve engineering workflows.",
     stats: [
@@ -184,36 +184,28 @@ export const BALAJI_DATA = {
 
   journey: [
     {
-      period: "Postgraduate Pedigree",
-      role: "M.Tech in Structural Engineering",
-      domain: "National Institute of Technology (NIT) Calicut",
-      summary: "Completed rigorous postgraduate research in structural engineering, focusing on structural dynamics, matrix methods of structural analysis, finite element theory, and mathematical optimization.",
-      takeaway: "Mastering the fundamental mathematical continuum—from virtual work principles to non-linear stiffness matrices—is the essential anchor. It allows me to build AI applications that respect physical laws rather than treating engineering as a black box.",
-      transferableSkill: "Advanced finite element analysis (FEA), structural dynamics, continuum mechanics, and numerical optimization."
+      period: "2016 – 2019",
+      role: "Structural Design Engineer",
+      domain: "Structural Engineering & Design (Industrial, Infrastructure & Onshore Structures)",
+      summary: "Developed a strong foundation in structural analysis and design across industrial and infrastructure projects, including reinforced concrete and steel structures, equipment foundations, pipe racks etc.",
+      takeaway: "Developed analytical thinking, systematic problem-solving, and an understanding of complex engineering requirements, while recognizing opportunities to improve repetitive calculations and workflows through automation.",
+      transferableSkill: "Structural analysis and design, IS codes, ASCE 7, ACI 318, AISC 360, STAAD.Pro, and engineering problem-solving."
     },
     {
-      period: "Core Industry Practice",
-      role: "Senior Structural Design Engineer",
-      domain: "Structural Design & Code Compliance (High-Rise & Industrial)",
-      summary: "Over a decade of hands-on structural design for complex commercial towers, residential high-rises, and industrial facilities. Conducted seismic response spectrum analysis, wind tunnel integration, foundation design, and construction phase peer reviews.",
-      takeaway: "Real-world engineering happens under tight timelines, shifting client briefs, and strict regulatory safety margins. I learned where structural designers spend 80% of their time on mundane, repetitive calculations that can and should be automated.",
-      transferableSkill: "Comprehensive understanding of IS 456, IS 800, IS 1893, Eurocodes, ACI 318, and deep practical experience with ETABS, SAP2000, and SAFE."
+      period: "2019 – 2022",
+      role: "Design Automation Engineer",
+      domain: "Python Development, Computational Engineering & Optimization",
+      summary: "Transitioned towards developing Python-based solutions for structural design calculations, quantity estimation, drawing automation, and engineering workflows. Explored optimization algorithms, API integrations, and computational methods to improve efficiency and reduce repetitive engineering tasks.",
+      takeaway: "Shifted from solving individual engineering problems to developing reusable computational solutions, building a foundation in programming, algorithmic thinking, and scalable automation.",
+      transferableSkill: "Python, SciPy, numerical methods, optimization algorithms, API integration, STAAD.Pro automation, and computational modelling."
     },
     {
-      period: "Computational Evolution",
-      role: "Computational Design & Automation Specialist",
-      domain: "Parametric Design, Visual Programming & API Development",
-      summary: "Pioneered automated workflows using Grasshopper, Dynamo, Python, and C# APIs (ETABS OAPI, Revit API, Tekla Open API). Built parametric models that generated complex roof topologies and optimized structural framing layouts.",
-      takeaway: "By replacing static CAD lines with parametric algorithms, structural design becomes dynamic. A change that previously took 3 weeks of manual remodeling could be regenerated in minutes with full structural recalculation.",
-      transferableSkill: "ETABS Open API, Revit API, Grasshopper algorithmic geometry, C# .NET plugins, and automated load propagation."
-    },
-    {
-      period: "Present Day",
-      role: "AI Systems Developer & Digital Engineering Lead",
-      domain: "AI Engineering, Agentic Workflows & Structural Optimization",
-      summary: "Architecting AI-powered applications that interpret engineering drawings, automate code compliance checking, optimize structural member sizes with genetic algorithms, and bridge LLMs with deterministic finite element solvers.",
-      takeaway: "The future of engineering is not replacing engineers, but equipping them with intelligent computational assistants that understand engineering intent, verify safety constraints, and unlock unprecedented design optimization.",
-      transferableSkill: "LangGraph agentic systems, genetic optimization (NSGA-II), machine learning surrogates, FastAPI, and verifiable engineering workflows."
+      period: "2022 – Present",
+      role: "AI Engineer | Generative AI & Intelligent Automation",
+      domain: "Generative AI, LLM Applications, Agentic AI & Autonomous Systems",
+      summary: "Expanded from conventional automation into AI-powered applications, integrating LLMs, natural language interfaces, document intelligence, and intelligent decision-support systems. Developing AI-native solutions such as Structural Agentic Modeller (SAM), which translates natural language instructions into analytical structural models and explores tool interaction, automated validation, and multi-step AI workflows.",
+      takeaway: "Evolved from rule-based automation towards intelligent systems that interpret user intent, reason through tasks, interact with tools, and validate outcomes. Focused on building practical AI applications that solve real-world problems reliably.",
+      transferableSkill: "Python, Generative AI, LLM APIs, OpenAI SDK, RAG, tool calling, MCP, agentic workflows, and AI application development."
     }
   ] as JourneyMilestone[],
 
@@ -299,5 +291,165 @@ export const BALAJI_DATA = {
       question: "Can I view your resume and project credentials?",
       answer: "Yes! You can inspect my full Curriculum Vitae and download a verified copy by clicking the 'Curriculum Vitae' button in the navigation bar. You can also explore my projects across this portfolio: the AI Structural Code Compliance Agent, Generative Truss Optimization Engine, Intelligent FEM Modeling Automation, and Bidirectional BIM-to-FEM Synchronizer."
     }
-  ]
+  ],
+  
+  education: [
+    {
+      degree: "Generative AI & Agentic AI",
+      institution: "Indian Institute of Technology, Kharagpur",
+      specialization: "Executive postgraduate programme",
+      period: "2026"
+    },
+    {
+      degree: "Structural Engineering",
+      institution: "National Institute of Technology, Calicut",
+      specialization: "Postgraduate specialization",
+      period: "2014-2016"
+    },
+    {
+      degree: "Civil Engineering",
+      institution: "Velammal Engineering College, Chennai",
+      specialization: "Undergraduate programme",
+      period: "2010-2014"
+    }
+  ],
+
+  experience: [
+    {
+      company: "Larsen & Toubro (L&T) Construction",
+      role: "Design Automation Engineer | Structural Engineering & AI",
+      period: "August 2019 – Present",
+      description:
+        "Leading engineering design automation, computational optimization and AI-driven digital engineering initiatives for Water and Wastewater infrastructure. Developing intelligent engineering workflows, structural design tools and autonomous engineering applications.",
+      specialties: [
+        "Structural Engineering",
+        "Python Automation",
+        "SAM – Structural Agentic Modeller",
+        "Design Optimization",
+        "Generative AI",
+        "Water Infrastructure",
+        "Engineering Digitalization"
+      ]
+    },
+    {
+      company: "Tata Consulting Engineers",
+      role: "Structural Engineering – Industrial & Onshore Structures",
+      period: "Previous Experience",
+      description:
+        "Structural analysis and design of industrial and onshore structures for petrochemical facilities, including technology structures, equipment foundations, pipe racks and pipe supports.",
+      specialties: [
+        "Industrial Structures",
+        "Equipment Foundations",
+        "Pipe Racks",
+        "ASCE 7",
+        "ACI 318",
+        "AISC 360"
+      ]
+    }
+  ],
+
+  certifications: [
+    // Add verified certifications here.
+    // Example:
+    {
+      name: "Neural Networks and Deep Learning",
+      issuer: "DeepLearning.AI",
+      year: "2025",
+      url: "https://coursera.org/share/3d38e972c955bf00da7ea71f234b2dd1"
+    },
+    {
+      name: "Improving Deep Neural Networks",
+      issuer: "DeepLearning.AI",
+      year: "2025",
+      url: "https://coursera.org/share/6e48b258eedd816352905c3f9b5a76bc"
+    },
+    {
+      name: "Structuring Machine Learning Projects",
+      issuer: "DeepLearning.AI",
+      year: "2025",
+      url: "https://coursera.org/share/14b64b693470b38696bda7247b7330bf"
+    },
+    {
+      name: "Introduction to Generative AI",
+      issuer: "Google Cloud",
+      year: "2025",
+      url: "https://coursera.org/share/d865eae69140e44c046922b05d2b8724"
+    },
+  ],
+
+  achievements: [
+    {
+      category: "Intellectual Property",
+      title: "AI-Based Tender BOQ Prediction of Repetitive Engineering Structures",
+      description:
+        "Copyright received for an AI-based approach to predicting tender quantities using historical engineering data."
+    },
+    {
+      category: "Engineering Innovation",
+      title: "SAM – Structural Agentic Modeller",
+      description:
+        "Development of an AI-native structural engineering platform that translates natural-language engineering intent into analytical models, interacts with structural analysis tools and supports deterministic engineering workflows."
+    },
+    {
+      category: "Computational Engineering",
+      title: "Engineering Design Optimization",
+      description:
+        "Development of computational optimization methodologies for structural components, retaining walls, thrust blocks and water distribution networks."
+    },
+    {
+      category: "Digital Engineering",
+      title: "WETDESK / IDES",
+      description:
+        "Contributions to integrated digital engineering solutions, web-based design automation applications and intelligent engineering workflows."
+    }
+  ],
+  
+  accomplishments: [
+    {
+      title: "Process Innovation Award",
+      category: "Innovation Award",
+      organization: "L&T Construction",
+      year: "2026",
+      image: "/awards/award-01.jpg",
+      description:
+        "Recognized with two PI Awards for pioneering contributions to AI-driven engineering innovation and the development of Structural Agentic Modeller (SAM) and RC Design Suite."
+    },
+    {
+      title: "Process Innovation Award",
+      category: "Innovation Award",
+      organization: "L&T Construction",
+      year: "2025",
+      image: "/awards/award-02.jpg",
+      description:
+        "Recognition for developing innovative engineering solutions and improving conventional design workflows."
+    },
+    {
+      title: "Process Innovation Award",
+      category: "Innovation Award",
+      organization: "L&T Construction",
+      year: "2025",
+      image: "/awards/award-02.jpg",
+      description:
+        "Recognition for developing innovative engineering solutions and improving conventional design workflows."
+    },
+    {
+      title: "Best Innovative Digital Solution",
+      category: "Digital Excellence Award",
+      organization: "L&T Construction",
+      year: "2026",
+      image: "/awards/award-01.jpg",
+      description:
+        "Recognition for contributions to engineering innovation, digital transformation and design automation."
+    },
+    {
+      title: "Technical Innovation Recognition",
+      category: "Intellectual Property",
+      organization: "L&T Construction",
+      year: "2025",
+      image: "/awards/award-03.jpg",
+      description:
+        "Recognition associated with AI-based tender BOQ prediction for repetitive engineering structures."
+    }
+  ],
+
 };

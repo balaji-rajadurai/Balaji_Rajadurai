@@ -171,14 +171,8 @@ export const DigitalTwin: React.FC<DigitalTwinProps> = ({ onOpenResume, onExplor
       <div className="max-w-3xl mb-8">
         <div className="flex items-center gap-2 text-xs font-semibold tracking-wide text-emerald-600 dark:text-emerald-400 mb-2">
           <Bot className="w-4 h-4" />
-          <span>Interactive Engineering Knowledge Agent</span>
+          <span>Interactive Knowledge Agent</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50">
-          Balaji&apos;s Digital Twin: Conversational Structural AI
-        </h1>
-        <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-          Test Balaji&apos;s digital twin directly. Query his approach to combining physical structural mechanics with AI, ask about his postgraduate research at NIT Calicut, explore how his genetic algorithms optimize steel trusses, or evaluate his 10+ years of structural design experience.
-        </p>
       </div>
 
       {/* The Digital Twin Full-Size Console Card */}
@@ -190,8 +184,6 @@ export const DigitalTwin: React.FC<DigitalTwinProps> = ({ onOpenResume, onExplor
             <div className="w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-emerald-500/20" />
             <div className="flex items-center gap-2 text-xs font-medium text-slate-800 dark:text-slate-200">
               <span className="font-bold">Balaji Rajadurai · Digital Twin</span>
-              <span className="text-slate-400 dark:text-slate-600">|</span>
-              <span className="text-slate-500 dark:text-slate-400 hidden sm:inline">M.Tech (Structural) · 10+ Yrs Exp</span>
             </div>
           </div>
 
@@ -280,10 +272,6 @@ export const DigitalTwin: React.FC<DigitalTwinProps> = ({ onOpenResume, onExplor
                 {/* Message Action Bar */}
                 {msg.sender === 'assistant' && (
                   <div className="mt-3 pt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200/60 dark:border-slate-800/60">
-                    <div className="flex items-center gap-1 text-[11px]">
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                      <span>Engineering Verified</span>
-                    </div>
                     <button
                       onClick={() => handleCopy(msg.id, msg.content)}
                       className="flex items-center gap-1 text-[11px] hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
@@ -335,7 +323,7 @@ export const DigitalTwin: React.FC<DigitalTwinProps> = ({ onOpenResume, onExplor
               type="text"
               value={inputQuery}
               onChange={(e) => setInputQuery(e.target.value)}
-              placeholder="Ask Balaji about FEA modeling, genetic optimization, structural AI, or NIT Calicut..."
+              placeholder="Ask Balaji about experience, skills, education..."
               disabled={isTyping}
               className="flex-1 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all disabled:opacity-50"
             />
@@ -348,24 +336,6 @@ export const DigitalTwin: React.FC<DigitalTwinProps> = ({ onOpenResume, onExplor
               <Send className="w-3.5 h-3.5" />
             </button>
           </form>
-
-          <div className="mt-2.5 flex items-center justify-between text-[11px] text-slate-400 dark:text-slate-500 px-1">
-            <span>Answers reflect 10+ years of structural engineering practice and verified research.</span>
-            <div className="flex items-center gap-3">
-              <button 
-                onClick={onExploreProjects} 
-                className="hover:text-slate-700 dark:hover:text-slate-300 underline"
-              >
-                View engineering systems
-              </button>
-              <button 
-                onClick={onOpenResume} 
-                className="hover:text-slate-700 dark:hover:text-slate-300 underline"
-              >
-                Inspect CV
-              </button>
-            </div>
-          </div>
         </div>
 
       </div>

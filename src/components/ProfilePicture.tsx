@@ -48,16 +48,16 @@ export const ProfilePicture: React.FC = () => {
     <div className="relative group">
       
       {/* Outer Card with Computational Structural Geometric Border */}
-      <div className="relative w-full aspect-square max-w-[360px] sm:max-w-[400px] mx-auto rounded-3xl p-3 bg-gradient-to-b from-slate-100 to-slate-200/60 dark:from-slate-800 dark:to-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-xl overflow-hidden">
+      <div className="relative w-full aspect-square max-w-[320px] sm:max-w-[360px] mx-auto rounded-3xl p-3 bg-gradient-to-b from-slate-100 to-slate-200/60 dark:from-slate-800 dark:to-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-xl overflow-hidden">
         
         {/* Subtle Finite Element Mesh Wireframe Graphic in Background */}
-        <div 
+        {/* <div 
           className="absolute inset-0 opacity-15 dark:opacity-20 pointer-events-none"
           style={{
             backgroundImage: `linear-gradient(to right, #059669 1px, transparent 1px), linear-gradient(to bottom, #059669 1px, transparent 1px)`,
             backgroundSize: '28px 28px'
           }}
-        />
+        /> */}
 
         {/* Profile Image Viewport */}
         <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-700/60 flex items-center justify-center">
@@ -114,7 +114,7 @@ export const ProfilePicture: React.FC = () => {
           )}
 
           {/* Quick Photo Customizer Button Overlay (Allows Balaji to easily upload or link his real photo) */}
-          <button
+          {/* <button
             onClick={() => setShowUploader(true)}
             aria-label="Customize profile picture"
             className="absolute top-3 right-3 p-2 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-white/90 hover:text-white backdrop-blur-md border border-white/20 transition-all opacity-80 hover:opacity-100 shadow-md flex items-center gap-1 text-[11px]"
@@ -122,21 +122,10 @@ export const ProfilePicture: React.FC = () => {
           >
             <Camera className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Set Photo</span>
-          </button>
+          </button> */}
 
         </div>
 
-      </div>
-
-      {/* Floating Status Tag Under Portrait */}
-      <div className="mt-4 flex items-center justify-between px-2 text-xs text-slate-500 dark:text-slate-400">
-        <span className="font-semibold text-slate-800 dark:text-slate-200">
-          Balaji Rajadurai
-        </span>
-        <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Available for Global Projects &amp; Consulting
-        </span>
       </div>
 
       {/* Photo Uploader Modal Dialog */}

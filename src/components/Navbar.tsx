@@ -22,9 +22,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems: { id: PageId; label: string; isSpecial?: boolean }[] = [
     { id: 'home', label: 'Overview' },
-    { id: 'projects', label: 'Systems & Projects' },
-    { id: 'experience', label: '10+ Yrs Journey' },
-    { id: 'skills', label: 'Competencies' },
+    { id: 'experience', label: 'Journey' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Accolades' },
     { id: 'digital-twin', label: 'Digital Twin', isSpecial: true },
     { id: 'contact', label: 'Contact' },
   ];
@@ -50,9 +50,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex flex-col">
             <span className="text-base font-bold tracking-tight text-slate-900 dark:text-slate-100 whitespace-nowrap">
               Balaji Rajadurai
-            </span>
-            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono hidden sm:inline">
-              M.Tech (Structural) · NIT Calicut
             </span>
           </div>
         </button>

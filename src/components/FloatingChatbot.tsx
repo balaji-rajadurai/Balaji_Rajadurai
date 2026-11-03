@@ -36,7 +36,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
     {
       id: 'init',
       sender: 'assistant',
-      content: "Hello! I am Balaji Rajadurai's Digital Twin. Ask me about my structural engineering experience (M.Tech NIT Calicut, 10+ years), AI automation frameworks, or generative optimization systems.",
+      content: "Hello! I am Balaji Rajadurai's Digital Twin. Ask me about my hobbies, accomplishments, educational details or work experience.",
       timestamp: 'Just now'
     }
   ]);
@@ -139,7 +139,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
                   <Sparkles className="w-3 h-3 text-emerald-400" />
                 </div>
                 <div className="text-[10px] text-slate-300">
-                  Structural &amp; AI Assistant · Active
+                  Active
                 </div>
               </div>
             </div>
@@ -235,7 +235,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask Balaji about FEA, AI, or M.Tech..."
+                placeholder="Ask about experience, skills, education..."
                 disabled={isTyping}
                 className="flex-1 px-3 py-2 text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
               />
@@ -251,8 +251,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
 
             <div className="mt-1.5 flex items-center justify-between text-[10px] text-slate-400">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-emerald-500" />
-                Deterministic Engineering Verification
+                
               </span>
               <button
                 onClick={() => {

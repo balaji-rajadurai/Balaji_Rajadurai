@@ -43,35 +43,13 @@ export const Journey: React.FC = () => {
         </div>
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50">
-          Engineering Foundations. Digital Innovation. Intelligent Systems.
+          Career Journey
         </h1>
 
         <p className="mt-4 text-sm sm:text-base text-justify text-slate-600 dark:text-slate-300 leading-relaxed">
-          Structural Engineering professional with 10+ years of experience
-          spanning engineering design, industrial infrastructure, computational
-          engineering, design automation and AI-driven engineering systems.
-          Focused on advancing conventional engineering workflows towards
-          intelligent and autonomous design environments.
+          My journey has been shaped by structural engineering, design automation, and a passion for solving complex problems. Today, I am channeling that experience into AI Engineering, with a focus on building intelligent, practical solutions. I work with Python, LLMs, and agentic AI to develop AI-powered applications, design intelligent workflows, and transform complex ideas into working software through continuous experimentation and learning.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={cvUrl}
-            download="Balaji_Rajadurai_Resume.pdf"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold transition-colors shadow-sm"
-          >
-            <Download className="w-4 h-4" />
-            Download CV
-          </a>
-
-          <a
-            href="#experience"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:border-emerald-500 transition-colors"
-          >
-            Explore Experience
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
       </div>
 
 
@@ -294,7 +272,7 @@ export const Journey: React.FC = () => {
                 {journey[activeStep].role}
               </h3>
 
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              <p className="text-sm text-justify text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 {journey[activeStep].summary}
               </p>
 
@@ -304,7 +282,7 @@ export const Journey: React.FC = () => {
                   Core Engineering Principle
                 </div>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 italic">
+                <p className="text-sm text-justify text-slate-600 dark:text-slate-300 italic">
                   "{journey[activeStep].takeaway}"
                 </p>
               </div>
@@ -352,7 +330,7 @@ export const Journey: React.FC = () => {
 
 
       {/* TECHNICAL RECOGNITION */}
-      <section>
+      {/* <section>
         <SectionHeader
           icon={<Award className="w-5 h-5" />}
           eyebrow="INNOVATION & CONTRIBUTIONS"
@@ -383,11 +361,11 @@ export const Journey: React.FC = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
 
       {/* CV DOWNLOAD BANNER */}
-      <section className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-5">
+      {/* <section className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-5">
 
         <div>
           <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
@@ -406,7 +384,7 @@ export const Journey: React.FC = () => {
           <Download className="w-4 h-4" />
           Download Resume
         </a>
-      </section>
+      </section> */}
 
     </div>
   );

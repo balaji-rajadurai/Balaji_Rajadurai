@@ -1,15 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { 
-  MessageSquare, 
-  X, 
-  Send, 
-  Sparkles, 
-  Maximize2, 
-  RotateCcw, 
-  ShieldCheck,
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import {
+  X,
+  Send,
+  Sparkles,
+  RotateCcw,
   Bot
 } from 'lucide-react';
-import { BALAJI_DATA } from '../data/portfolioData';
 
 interface Message {
   id: string;
@@ -19,102 +17,121 @@ interface Message {
 }
 
 const QUICK_PROMPTS = [
-  "How do you combine structural engineering with AI?",
-  "Tell me about your M.Tech from NIT Calicut & 10+ yrs exp",
-  "How do you automate ETABS and Revit modeling?",
-  "What optimization algorithms do you use for steel trusses?",
-  "How can we collaborate or hire you?"
+  "Tell me about your AI engineering experience.",
+  "What is the Structural Agentic Modeller (SAM)?",
+  "Explain the AI-powered tender BOQ prediction system.",
+  "How does your water distribution network optimization work?",
+  "How can I contact you?"
 ];
 
 interface FloatingChatbotProps {
-  onOpenFullPageTwin: () => void;
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
-export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPageTwin }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 'init',
-      sender: 'assistant',
-      content: "Hello! I am Balaji Rajadurai's Digital Twin. Ask me about my hobbies, accomplishments, educational details or work experience.",
-      timestamp: 'Just now'
-    }
-  ]);
+export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({
+  isOpen,
+  onOpenChange
+}) => {
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatBodyRef = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+  // Scroll only the chat message panel, not the page behind the floating window.
   useEffect(() => {
-    if (isOpen) {
-      scrollToBottom();
+    const container = chatBodyRef.current;
+    if (isOpen && container) {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: 'smooth'
+      });
     }
   }, [messages, isOpen, isTyping]);
 
-  const generateAnswer = (userQuery: string): string => {
-    const qLower = userQuery.toLowerCase().trim();
+  const createMessageId = () =>
+    `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
-    // Match keywords from BALAJI_DATA knowledge base
-    const match = BALAJI_DATA.digitalTwinKnowledge.find(item => 
-      item.keywords.some(kw => qLower.includes(kw))
-    );
-
-    if (match) {
-      return match.answer;
-    }
-
-    if (qLower.includes('contact') || qLower.includes('email') || qLower.includes('hire') || qLower.includes('reach')) {
-      return `You can reach Balaji Rajadurai directly at ${BALAJI_DATA.profile.email}. He is open to structural automation consulting, custom ETABS/Revit API development, and engineering optimization contracts globally!`;
-    }
-
-    if (qLower.includes('project') || qLower.includes('work') || qLower.includes('system')) {
-      return `Balaji has developed 4 flagship engineering systems: 1) AI-Powered Structural Code Compliance Agent (IS 456, IS 800, ACI 318), 2) Generative Truss Multi-Objective Optimization (genetic algorithms for steel weight reduction), 3) Intelligent FEM Modeling Automation (ETABS & SAP2000 OAPI), and 4) Bidirectional BIM-to-FEM Synchronizer (Grasshopper/Revit/Tekla). Check the Projects page to explore live interactive simulators!`;
-    }
-
-    // Default intelligent response
-    return `Balaji Rajadurai is a postgraduate Structural Engineer (M.Tech NIT Calicut) with over 10 years of experience bridging conventional structural mechanics with intelligent computational systems. He specializes in ETABS/SAP2000 automation, generative structural optimization using genetic algorithms, and deterministic AI agents for design code compliance. Feel free to ask about any specific project or explore his credentials!`;
-  };
-
-  const handleSend = (text?: string) => {
-    const query = (text || input).trim();
+  const handleSend = async (text?: string) => {
+    const query = (text ?? input).trim();
     if (!query || isTyping) return;
 
     const userMsg: Message = {
-      id: `u-${Date.now()}`,
+      id: createMessageId(),
       sender: 'user',
       content: query,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      timestamp: new Date().toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+      })
     };
 
-    setMessages(prev => [...prev, userMsg]);
+    // Include the new question in the conversation sent to the backend.
+    const conversation = [...messages, userMsg];
+
+    setMessages(conversation);
     setInput('');
     setIsTyping(true);
 
-    setTimeout(() => {
-      const reply = generateAnswer(query);
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          messages: conversation.map((message) => ({
+            role: message.sender === 'assistant' ? 'assistant' : 'user',
+            content: message.content
+          }))
+        })
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.error || `Chat request failed (${response.status})`);
+      }
+
+      if (typeof data.reply !== 'string' || !data.reply.trim()) {
+        throw new Error('The AI service returned an empty response.');
+      }
+
       const assistantMsg: Message = {
-        id: `a-${Date.now()}`,
+        id: createMessageId(),
         sender: 'assistant',
-        content: reply,
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        content: data.reply,
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit'
+        })
       };
-      setMessages(prev => [...prev, assistantMsg]);
+
+      setMessages((prev) => [...prev, assistantMsg]);
+    } catch (error) {
+      console.error('Floating chatbot error:', error);
+
+      const errorMsg: Message = {
+        id: createMessageId(),
+        sender: 'assistant',
+        content: error instanceof Error
+          ? `I could not get a response right now. ${error.message}`
+          : 'I could not connect to the AI service. Please try again.',
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      };
+
+      setMessages((prev) => [...prev, errorMsg]);
+    } finally {
       setIsTyping(false);
-    }, 550);
+    }
   };
 
   const handleReset = () => {
-    setMessages([
-      {
-        id: 'reset',
-        sender: 'assistant',
-        content: "Conversation refreshed. How can I assist you with Balaji's structural engineering or AI systems work today?",
-        timestamp: 'Just now'
-      }
-    ]);
+    setMessages([]);
+    setInput('');
   };
 
   return (
@@ -145,18 +162,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
             </div>
 
             <div className="flex items-center gap-1">
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  onOpenFullPageTwin();
-                }}
-                className="p-1.5 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
-                title="Expand to Full Page Digital Twin"
-              >
-                <Maximize2 className="w-3.5 h-3.5" />
-              </button>
-              
-              <button
+<button
                 onClick={handleReset}
                 className="p-1.5 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
                 title="Reset conversation"
@@ -165,7 +171,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
               </button>
 
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => onOpenChange(false)}
                 className="p-1.5 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
                 title="Close chat"
               >
@@ -180,6 +186,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
               {QUICK_PROMPTS.map((prompt, pIdx) => (
                 <button
                   key={pIdx}
+                  type="button"
                   onClick={() => handleSend(prompt)}
                   disabled={isTyping}
                   className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-850 border border-slate-200 dark:border-slate-750 text-slate-700 dark:text-slate-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:border-emerald-400 dark:hover:text-emerald-300 transition-colors shrink-0 disabled:opacity-50"
@@ -191,11 +198,27 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
           </div>
 
           {/* Messages Body */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3.5 bg-white dark:bg-slate-900 text-xs">
+          <div
+            ref={chatBodyRef}
+            className="flex-1 p-4 overflow-y-auto space-y-3.5 bg-white dark:bg-slate-900 text-xs"
+          >
+            {messages.length === 0 && (
+              <div className="h-full min-h-32 flex flex-col items-center justify-center text-center text-slate-500 dark:text-slate-400 px-5">
+                <Bot className="w-7 h-7 mb-2 text-emerald-500" />
+                <p className="font-semibold text-slate-700 dark:text-slate-200">
+                  Ask Balaji's Digital Twin
+                </p>
+                <p className="mt-1 text-[11px]">
+                  Ask about AI projects, experience, skills, or collaboration.
+                </p>
+              </div>
+            )}
             {messages.map((m) => (
               <div
                 key={m.id}
-                className={`flex flex-col ${m.sender === 'user' ? 'items-end' : 'items-start'}`}
+                className={`flex flex-col ${
+                  m.sender === 'user' ? 'items-end' : 'items-start'
+                }`}
               >
                 <div
                   className={`max-w-[85%] rounded-xl p-3 leading-relaxed ${
@@ -204,8 +227,26 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-none border border-slate-200/60 dark:border-slate-700/60'
                   }`}
                 >
-                  <p className="whitespace-pre-wrap">{m.content}</p>
+                  {m.sender === 'user' ? (
+                    <p className="whitespace-pre-wrap">{m.content}</p>
+                  ) : (
+                    <div className="prose prose-sm dark:prose-invert max-w-none
+                      prose-p:my-2
+                      prose-a:text-blue-600 dark:prose-a:text-blue-400
+                      prose-a:underline
+                      prose-strong:font-semibold
+                      prose-ul:my-2
+                      prose-ol:my-2
+                      prose-li:my-1
+                      prose-headings:my-2
+                    ">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {m.content}
+                      </ReactMarkdown>
+                    </div>
+                  )}
                 </div>
+
                 <span className="text-[10px] text-slate-400 mt-0.5 px-1">
                   {m.timestamp}
                 </span>
@@ -215,11 +256,10 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
             {isTyping && (
               <div className="flex items-center gap-1.5 text-xs text-slate-400 bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-700/40 w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Balaji is synthesizing engineering response...</span>
+                <span>Generating response...</span>
               </div>
             )}
 
-            <div ref={messagesEndRef} />
           </div>
 
           {/* Input Footer */}
@@ -248,21 +288,6 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
                 <Send className="w-3.5 h-3.5" />
               </button>
             </form>
-
-            <div className="mt-1.5 flex items-center justify-between text-[10px] text-slate-400">
-              <span className="flex items-center gap-1">
-                
-              </span>
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  onOpenFullPageTwin();
-                }}
-                className="text-emerald-600 dark:text-emerald-400 hover:underline"
-              >
-                Open Full Screen &rarr;
-              </button>
-            </div>
           </div>
 
         </div>
@@ -270,7 +295,7 @@ export const FloatingChatbot: React.FC<FloatingChatbotProps> = ({ onOpenFullPage
 
       {/* Persistent Floating Chat Trigger Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => onOpenChange(!isOpen)}
         aria-label="Chat with Balaji's Digital Twin"
         className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-slate-900 hover:bg-slate-800 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white shadow-2xl transition-all duration-300 hover:scale-105 border border-slate-700/50 dark:border-emerald-400/40"
       >

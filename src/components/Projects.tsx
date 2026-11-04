@@ -29,29 +29,6 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
             Bridging conventional structural engineering mechanics with intelligent computational systems. Built for production reliability, transparent calculations, and zero hallucination.
           </p>
         </div>
-
-        {/* Filter Segmented Controls */}
-        <div className="flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-x-auto no-scrollbar">
-          {[
-            { id: 'all', label: 'All Systems' },
-            { id: 'ai-agents', label: 'Structural AI Agents' },
-            { id: 'optimization', label: 'Generative Optimization' },
-            { id: 'automation', label: 'FEM Automation' },
-            { id: 'bim-fem', label: 'BIM-to-FEM' }
-          ].map(tab => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveCategory(tab.id)}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 ${
-                activeCategory === tab.id
-                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-50 shadow-sm font-semibold'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* Bento Grid */}
@@ -67,10 +44,6 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                 <span className="font-semibold text-emerald-600 dark:text-emerald-400">
                   {project.categoryLabel}
                 </span>
-                <span aria-hidden="true">·</span>
-                <span>{project.stack.slice(0, 3).join(', ')}</span>
-                <span aria-hidden="true">·</span>
-                <span>Deterministic Verification</span>
               </div>
 
               {/* Title */}
@@ -83,11 +56,11 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               </p>
 
               {/* Summary */}
-              <p className="mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="mt-4 text-xs sm:text-sm text-justify text-slate-600 dark:text-slate-300 leading-relaxed">
                 {project.summary}
               </p>
 
-              {/* Architecture Snapshot Box */}
+              {/* Architecture Snapshot Box
               <div className="my-5 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-100 dark:border-slate-800">
                 <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 pb-2 mb-2 border-b border-slate-200/60 dark:border-slate-800">
                   <span className="flex items-center gap-1.5 font-sans font-medium text-slate-700 dark:text-slate-300">
@@ -108,7 +81,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Quantitative Metrics Strip */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-3 border-y border-slate-100 dark:border-slate-850 mb-5">
@@ -126,7 +99,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
 
               {/* Frameworks & APIs */}
               <div className="text-xs text-slate-500 dark:text-slate-400 mb-6">
-                <span className="font-semibold text-slate-700 dark:text-slate-300">Stack &amp; APIs: </span>
+                <span className="font-semibold text-slate-700 dark:text-slate-300">Stack: </span>
                 {project.stack.join(' · ')}
               </div>
             </div>

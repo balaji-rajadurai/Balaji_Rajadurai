@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Moon, Sun, FileText, Sparkles, Menu, X } from 'lucide-react';
 
-export type PageId = 'home' | 'projects' | 'experience' | 'skills' | 'digital-twin' | 'contact';
+export type PageId = 'home' | 'projects' | 'experience' | 'skills' | 'contact';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -9,6 +9,7 @@ interface NavbarProps {
   darkMode: boolean;
   setDarkMode: (value: boolean | ((prev: boolean) => boolean)) => void;
   onOpenResume: () => void;
+  onOpenDigitalTwin: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -17,21 +18,28 @@ export const Navbar: React.FC<NavbarProps> = ({
   darkMode,
   setDarkMode,
   onOpenResume,
+  onOpenDigitalTwin,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems: { id: PageId; label: string; isSpecial?: boolean }[] = [
+  const navItems: { id: PageId | 'digital-twin'; label: string; isSpecial?: boolean }[] = [
     { id: 'home', label: 'Overview' },
     { id: 'experience', label: 'Journey' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Accolades' },
-    { id: 'digital-twin', label: 'Digital Twin', isSpecial: true },
     { id: 'contact', label: 'Contact' },
+    { id: 'digital-twin', label: 'Digital Twin', isSpecial: true },
   ];
 
-  const handleNavClick = (page: PageId) => {
-    setCurrentPage(page);
+  const handleNavClick = (page: PageId | 'digital-twin') => {
     setMobileMenuOpen(false);
+
+    if (page === 'digital-twin') {
+      onOpenDigitalTwin();
+      return;
+    }
+
+    setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -90,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="hidden sm:flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-white bg-slate-900 dark:bg-slate-100 dark:text-slate-950 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors whitespace-nowrap shrink-0 shadow-sm"
           >
             <FileText className="w-3.5 h-3.5" />
-            <span>Curriculum Vitae</span>
+            <span>Download CV</span>
           </button>
 
           {/* Mobile Menu Hamburger */}

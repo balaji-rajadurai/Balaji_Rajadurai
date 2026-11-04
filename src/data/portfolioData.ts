@@ -53,36 +53,54 @@ export const BALAJI_DATA = {
 
   projects: [
     {
-      id: "structural-code-agent",
-      title: "AI-Powered Structural Code Compliance & Verification Agent",
-      subtitle: "Multi-Agent System for Autonomous Code Checks & Calculation Sheet Generation",
+      id: "ai-tender-boq",
+      title: "AI-Powered Tender BOQ Prediction & Estimation System",
+      subtitle: "Intelligent BOQ Prediction for Repetitive Engineering Structures Using Deep Learning & Generative AI",
       category: "ai-agents",
-      categoryLabel: "AI & Engineering Agents",
-      summary: "An autonomous multi-agent engineering assistant that interprets structural member forces, queries building code clauses (IS 456, IS 800, Eurocode, ACI 318), verifies shear/moment/slenderness limits, and generates transparent, auditable calculation reports with mathematical justifications.",
-      impact: "Eliminates manual formula lookup errors across 500+ design load combinations while producing human-auditable calculation proofs verified against finite element solver outputs.",
+      categoryLabel: "AI & Intelligent Automation",
+      summary: "An AI-powered tender intelligence system that automates the prediction and estimation of Bills of Quantities (BOQ) for repetitive engineering structures. Combines historical project data, deep learning models, Large Language Models (LLMs), and Vision-Language Models (VLMs) to extract engineering information, identify repetitive patterns, and predict quantities during tender preparation.",
+      impact: "Reduces dependence on manual quantity estimation by leveraging historical engineering data and AI-driven prediction. Enables faster and more consistent tender BOQ preparation through intelligent quantity prediction, document understanding, and automated information extraction.",
       metrics: [
-        { label: "Clause Verification", value: "100% Deterministic" },
-        { label: "Supported Codes", value: "IS 456, IS 800, ACI 318" },
-        { label: "Check Velocity", value: "< 2.5s / 100 members" },
-        { label: "Report Auditing", value: "Step-by-step math" }
+        { label: "Core Capability", value: "AI-Based BOQ Prediction" },
+        { label: "AI Technologies", value: "Deep Learning, LLM, VLM" },
+        { label: "Data Foundation", value: "Historical Project BOQs" },
+        { label: "Integration", value: "L&T Cognitive Services" }
       ],
-      stack: ["Python", "LangGraph", "FastAPI", "Pydantic v2", "LaTeX/PDF Engine", "Structural Code DB"],
-      githubUrl: "https://github.com/balajir333/structural-code-agent",
+      stack: ["Python", "Deep Learning", "LLMs", "Vision-Language Models", "Historical Project Database", "L&T Cognitive Services"],
+      githubUrl: "",
       highlights: [
-        "Rigorous deterministic verification engine where LLM extracts design intent but calculations are executed via exact closed-form engineering formulas.",
-        "Built-in compliance modules for flexure, shear, torsion, serviceability deflection, and crack-width verification under working and ultimate limit states.",
-        "Generates publication-quality step-by-step engineering design sheets with substituted values, reference clauses, and safety pass/fail margins.",
-        "LangGraph critic agent validates member forces against equilibrium invariants prior to certifying safety factors."
+        "Developed deep learning-based prediction capabilities using historical engineering data to estimate quantities for repetitive structures and engineering components.",
+        "Leveraged historical project BOQs to identify recurring patterns and establish data-driven quantity prediction models for tender estimation.",
+        "Integrated Vision-Language Models (VLMs) for extracting structured engineering information from P&ID drawings and technical documents.",
+        "Implemented an LLM-powered geotechnical report analysis module to interpret unstructured geotechnical information and support tender engineering workflows.",
+        "Integrated AI capabilities with L&T Cognitive Services to establish a unified intelligent tender estimation workflow.",
+        "Received copyright recognition for the AI-Based Tender BOQ Prediction of Repetitive Engineering Structures."
       ],
       architectureSteps: [
-        { step: "01", title: "Member Force Ingestion", description: "Extracts axial forces, bending moments, and shear from ETABS/STAAD analysis outputs." },
-        { step: "02", title: "Clause Mapping & Parameterization", description: "Determines applicable building code clauses based on material grades, geometry, and exposure class." },
-        { step: "03", title: "Deterministic Math Verification", description: "Calculates required steel areas, interaction ratios, and deflection limits without hallucination." },
-        { step: "04", title: "Auditable Calc Sheet Generation", description: "Produces structured PDF calculation dossiers with clause citations for peer review." }
+        {
+          step: "01",
+          title: "Historical Data Preparation",
+          description: "Collects and processes historical project BOQs, engineering quantities, structural configurations, and associated project information to establish the prediction dataset."
+        },
+        {
+          step: "02",
+          title: "AI-Based Quantity Prediction",
+          description: "Applies deep learning models to identify patterns across repetitive engineering structures and predict corresponding BOQ quantities using historical project knowledge."
+        },
+        {
+          step: "03",
+          title: "Intelligent Document Understanding",
+          description: "Uses Vision-Language Models to extract engineering information from P&ID drawings and LLMs to interpret geotechnical reports and technical documentation."
+        },
+        {
+          step: "04",
+          title: "Integrated Tender Intelligence",
+          description: "Combines predicted quantities and extracted engineering information through L&T Cognitive Services to support tender BOQ preparation and engineering evaluation."
+        }
       ],
-      problemStatement: "Manual checking of hundreds of structural columns, beams, and connections against complex national code clauses is labor-intensive, error-prone, and causes bottlenecks during design revision cycles.",
-      solutionOverview: "Engineered an AI agent harness that pairs semantic understanding of building design codes with exact, unit-checked mathematical solvers to automate structural compliance verification with zero risk of numerical hallucination.",
-      demoType: "code-compliance"
+      problemStatement: "Tender-stage BOQ preparation for complex engineering projects involves extensive manual interpretation of drawings, technical specifications, geotechnical reports, and historical project data. Estimating quantities for repetitive structures is time-consuming and heavily dependent on engineering expertise and the availability of comparable historical projects.",
+      solutionOverview: "Developed an AI-driven tender intelligence solution combining historical-data-based deep learning, document intelligence using VLMs, and contextual information extraction using LLMs. The system transforms historical engineering knowledge and unstructured tender documents into actionable quantity predictions and structured engineering information, supporting faster and more consistent tender estimation.",
+      demoType: "tender-boq"
     },
     {
       id: "generative-truss-optimization",
@@ -117,69 +135,177 @@ export const BALAJI_DATA = {
       demoType: "structural-optimization"
     },
     {
-      id: "fem-model-generator",
-      title: "Intelligent FEM Modeling & Analysis Automation Engine",
-      subtitle: "Translating Architectural Intent into Structural Analysis Models",
-      category: "automation",
-      categoryLabel: "Design Automation",
-      summary: "A robust automation engine that parses 2D architectural drawings, IFC models, and spatial grids to automatically construct analytical stick models, assign member properties, apply tributary slab loads, and execute ETABS/SAP2000 analysis runs via API.",
-      impact: "Reduced preliminary structural framing model creation time from 3–4 days to under 15 minutes, with automated boundary condition verification.",
+      id: "wdn-scheme-optimization",
+      title: "Intelligent Scheme Optimization for Water Distribution Networks",
+      subtitle: "Graph-Based Network Optimization for Hydraulic Performance, Pipeline Routing & Infrastructure Cost Reduction",
+      category: "ai-agents",
+      categoryLabel: "AI & Engineering Optimization",
+      summary: "An intelligent water distribution network optimization system that automates the development and evaluation of pipeline network schemes using graph algorithms, hydraulic simulation, and computational optimization techniques. Integrates network topology, demand distribution, terrain elevations, hydraulic constraints, and infrastructure requirements to identify optimized pipeline sizing, routing, and network configurations.",
+      impact: "Transforms conventional manual network planning into a computational optimization workflow. Enables systematic evaluation of alternative network configurations while balancing pipeline quantities, hydraulic performance, residual pressure requirements, and infrastructure costs.",
       metrics: [
-        { label: "Modeling Speedup", value: "12x Faster" },
-        { label: "API Integrations", value: "ETABS, SAP2000, Tekla" },
-        { label: "Load Distribution", value: "Automated Tributary" },
-        { label: "Geometry Cleanup", value: "Tolerance Snapping" }
+        { label: "Optimization Scope", value: "Network Sizing & Routing" },
+        { label: "Hydraulic Constraints", value: "Velocity, Head Loss & Pressure" },
+        { label: "Network Scale", value: "2,000+ Nodes / Zone" },
+        { label: "Optimization Methods", value: "Graph Algorithms & SciPy" }
       ],
-      stack: ["C#", "Python", "ETABS OAPI", "SAP2000 API", "OpenCV", "IFC OpenShell"],
-      githubUrl: "https://github.com/balajir333/fem-model-generator",
+      stack: ["Python", "NetworkX", "SciPy", "EPANET", "Graph Algorithms", "Computational Optimization", "GIS", "Qiskit"],
+      githubUrl: "",
       highlights: [
-        "Intelligent column and grid line extraction from CAD layers with geometric snapping and tolerance clustering.",
-        "Automated yield-line and two-way tributary area load distribution from floor slabs directly onto supporting beams.",
-        "Full programmatic creation of stories, diaphragm constraints, seismic mass definitions, and response spectra cases.",
-        "Detects geometric anomalies (misaligned shear walls, unmeshed intersections, disconnected joints) prior to analysis submission."
+        "Developed graph-based optimization algorithms for identifying efficient pipeline network configurations and routing alternatives based on network topology, demand nodes, and geographical constraints.",
+        "Implemented hydraulic optimization for pipeline diameter selection and sizing, considering flow velocity, head-loss limitations, residual pressure, and available source head.",
+        "Integrated EPANET hydraulic simulation to evaluate network performance and verify optimized configurations against engineering design constraints.",
+        "Explored Steiner-tree-based routing approaches to minimize pipeline network length while maintaining connectivity and hydraulic feasibility.",
+        "Implemented telescopic pipeline sizing strategies and commercially available DI K9 pipe diameter constraints to develop practical and economical network configurations.",
+        "Incorporated GIS-based spatial information, elevation data, and service reservoir considerations into network planning and scheme optimization.",
+        "Explored quantum optimization formulations using Qiskit for selected network and infrastructure optimization problems."
       ],
       architectureSteps: [
-        { step: "01", title: "CAD / IFC Spatial Ingestion", description: "Parses layer semantics, geometric polygons, and structural centerlines with tolerance healing." },
-        { step: "02", title: "Analytical Graph Construction", description: "Translates architectural footprints into a topological node-edge structural framing network." },
-        { step: "03", title: "API Orchestration (ETABS/SAP)", description: "Invokes Open API commands to define materials, frame sections, rigid diaphragms, and boundary pins." },
-        { step: "04", title: "Automated FEA Run & Health Audit", description: "Solves modal frequencies, base shears, and story drifts, flagging code non-compliance immediately." }
+        {
+          step: "01",
+          title: "Network Data Acquisition & Modelling",
+          description: "Processes source information, demand nodes, network connectivity, ground elevations, pipeline alignments, and hydraulic requirements to construct a graph-based representation of the water distribution network."
+        },
+        {
+          step: "02",
+          title: "Network Routing & Configuration",
+          description: "Applies graph algorithms and Steiner-tree-based routing techniques to identify efficient pipeline connectivity and alternative network configurations while considering geographical and infrastructure constraints."
+        },
+        {
+          step: "03",
+          title: "Hydraulic & Diameter Optimization",
+          description: "Optimizes pipeline diameters and network configurations using computational optimization methods, considering flow velocity, head loss, residual pressure, source head, and practical pipe availability."
+        },
+        {
+          step: "04",
+          title: "Hydraulic Verification & Scheme Evaluation",
+          description: "Evaluates optimized network configurations through EPANET hydraulic simulations, verifies compliance with design constraints, and compares alternative schemes based on hydraulic performance and pipeline quantities."
+        }
       ],
-      problemStatement: "Transferring architectural layouts into structural finite element software requires days of manual drafting, section property assignment, and tedious joint meshing where human error frequently creeps in.",
-      solutionOverview: "Developed an API-driven automation framework that understands structural framing semantics, generating clean analytical models and running preliminary checks without manual redrawing.",
-      demoType: "fem-generator"
+      problemStatement: "Conventional water distribution network planning involves extensive manual iterations to determine pipeline routes, diameters, and network configurations. Balancing hydraulic requirements, terrain conditions, residual pressure, pipeline quantities, and infrastructure costs across large distribution networks makes scheme development computationally intensive and dependent on engineering experience.",
+      solutionOverview: "Developed a computationally driven water distribution network optimization framework combining graph theory, hydraulic simulation, and optimization algorithms. The system evaluates alternative pipeline routing and sizing configurations against hydraulic and engineering constraints to identify technically feasible and economically efficient network schemes.",
+      demoType: "wdn-optimization"
     },
     {
-      id: "bim-fem-synchronizer",
-      title: "Bidirectional BIM-to-FEM Parametric Synchronizer",
-      subtitle: "Seamless Data Flow between Grasshopper, Revit, and Tekla Structures",
-      category: "bim-fem",
-      categoryLabel: "BIM & Digital Engineering",
-      summary: "A bidirectional computational conduit linking parametric computational geometry (Rhino/Grasshopper) with detailed structural BIM authoring platforms (Autodesk Revit, Tekla Structures) and analysis solvers, synchronizing changes in real time.",
-      impact: "Maintains single-source-of-truth structural geometry across architectural revisions, preventing costly discrepancy errors between design models and fabrication drawings.",
+      id: "ai-surge-protection",
+      title: "AI-Powered Water Network Surge Protection System",
+      subtitle: "Graph Neural Network-Based Transient Analysis & Intelligent Surge Protection Prediction",
+      category: "ai-agents",
+      categoryLabel: "AI & Predictive Intelligence",
+
+      summary: "An AI-driven water network analysis framework that explores the application of Graph Neural Networks (GNNs) to predict hydraulic transient behaviour and recommend surge protection measures. Combines water distribution network topology, hydraulic attributes, transient simulation results, and machine learning models to identify potential surge conditions and predict suitable protective devices such as Air Cushion Valves (ACVs) and Zero Velocity Valves (ZVVs).",
+
+      impact: "Explores the use of graph-based machine learning to accelerate surge protection assessment across complex water distribution networks. Aims to reduce dependence on repeated simulation-based evaluations by learning patterns from hydraulic transient simulation datasets while retaining established engineering criteria for final verification.",
+
       metrics: [
-        { label: "Discrepancy Rate", value: "Zero Geometry Drift" },
-        { label: "Platforms Bridged", value: "Grasshopper · Revit · Tekla" },
-        { label: "Parameter Sync", value: "Bi-directional" },
-        { label: "Member Detailing", value: "LOD 350+ Support" }
+        { label: "AI Architecture", value: "Graph Neural Networks" },
+        { label: "Ground Truth", value: "Bentley HAMMER" },
+        { label: "Prediction Target", value: "ACV & ZVV Placement" },
+        { label: "Verification", value: "Hydraulic Surge Criteria" }
       ],
-      stack: ["C# .NET", "Revit API", "Tekla Open API", "Rhino.Inside", "SQLite"],
-      githubUrl: "https://github.com/balajir333/bim-fem-synchronizer",
+
+      stack: [
+        "Python",
+        "PyTorch",
+        "PyTorch Geometric",
+        "Graph Neural Networks",
+        "GraphSAGE",
+        "GINE",
+        "GAT",
+        "Bentley HAMMER"
+      ],
+
+      githubUrl: "",
+
       highlights: [
-        "Synchronizes 3D frame centerlines, member sizes, materials, and eccentricities across multidisciplinary platforms.",
-        "Translates complex curved and double-curved geometric surfaces into panelized structural frames ready for fabrication.",
-        "Automatic generation of steel connection nodal data and anchor bolt placement rules.",
-        "Change-delta visualizer showing structural changes between architectural milestone revisions."
+        "Developed a graph-based representation of water distribution networks using node, edge, and network-level hydraulic attributes.",
+        "Explored Graph Neural Network architectures including GraphSAGE, GINE, GAT, and graph-based message-passing models for learning network behaviour.",
+        "Leveraged Bentley HAMMER transient simulation outputs as ground-truth data for training and evaluating predictive machine learning models.",
+        "Formulated surge protection prediction around Air Cushion Valve (ACV) and Zero Velocity Valve (ZVV) recommendations.",
+        "Incorporated engineering-based surge acceptance criteria, including maximum pressure and minimum transient head limits, into model evaluation and verification.",
+        "Explored physics-informed and simulation-guided learning approaches to combine hydraulic engineering knowledge with graph-based predictive intelligence."
+      ],
+
+      architectureSteps: [
+        {
+          step: "01",
+          title: "Water Network Graph Construction",
+          description: "Converts network topology into graph representations containing node attributes, pipe connectivity, hydraulic properties, and network-level information."
+        },
+        {
+          step: "02",
+          title: "Transient Simulation & Dataset Generation",
+          description: "Uses Bentley HAMMER to simulate hydraulic transient conditions and generate ground-truth surge pressure and transient head results for different network configurations."
+        },
+        {
+          step: "03",
+          title: "GNN-Based Predictive Modelling",
+          description: "Trains graph-based machine learning architectures to learn relationships between network topology, hydraulic characteristics, transient behaviour, and surge protection requirements."
+        },
+        {
+          step: "04",
+          title: "Surge Protection Prediction & Verification",
+          description: "Predicts potential ACV and ZVV protection requirements and evaluates predicted solutions against engineering acceptance criteria using hydraulic transient simulation."
+        }
+      ],
+
+      problemStatement: "Hydraulic transient analysis of large water distribution networks requires extensive simulation, engineering interpretation, and repeated evaluation of surge protection alternatives. Identifying suitable protection devices and locations through conventional simulation-driven workflows can become computationally intensive, particularly when evaluating multiple network configurations.",
+
+      solutionOverview: "Explored a simulation-guided AI framework combining hydraulic transient analysis and Graph Neural Networks to learn the relationship between network topology, hydraulic characteristics, and surge behaviour. By using Bentley HAMMER as the physics-based ground-truth simulation environment and GNNs for predictive modelling, the framework investigates intelligent surge protection recommendations while retaining hydraulic simulation as the final engineering verification mechanism.",
+
+      demoType: "gnn-surge-protection"
+    },
+    {
+      id: "structural-agentic-modeller",
+      title: "Structural Agentic Modeller (SAM)",
+      subtitle: "AI-Native Structural Engineering Platform for Natural Language-Driven Analytical Modelling",
+      category: "ai-agents",
+      categoryLabel: "AI & Agentic Systems",
+      summary: "An AI-native structural engineering application that transforms natural language engineering requirements into analytical structural models. Combines Large Language Models (LLMs), agentic workflows, engineering tools, and deterministic validation mechanisms to interpret structural intent, construct analytical models, generate STAAD.Pro-compatible input files, and facilitate iterative model refinement.",
+      impact: "Bridges the gap between engineering intent and analytical modelling by enabling engineers to describe structural configurations using natural language. Reduces dependency on manual model creation and specialized software expertise while introducing an intelligent, interactive approach to structural analysis workflows.",
+      metrics: [
+        { label: "Core Capability", value: "Agentic Structural Modelling" },
+        { label: "Input Interface", value: "Natural Language Prompts" },
+        { label: "Model Generation", value: "STAAD.Pro Compatible" },
+        { label: "Validation", value: "Automated Syntax & Model Checks" }
+      ],
+      stack: ["Python", "LLMs", "OpenAI SDK", "Agentic Workflows", "STAAD.Pro", "OpenSees", "TCL", "Plotly", "Gradio"],
+      githubUrl: "",
+      highlights: [
+        "Developed an AI-native structural modelling workflow that interprets natural language descriptions of structural geometry, dimensions, materials, supports, and loading conditions.",
+        "Implemented structured analytical model representations covering nodes, members, plates, material properties, cross-sections, supports, and loading configurations.",
+        "Integrated LLM-powered reasoning with engineering tools to translate interpreted design intent into structured analytical models and STAAD.Pro-compatible input files.",
+        "Developed automated syntax validation and correction mechanisms to identify and resolve errors in generated analytical model files.",
+        "Enabled analytical model interoperability through OpenSees/TCL export and interactive structural model visualization using Plotly.",
+        "Explored parametric structural configurations and iterative model refinement, moving beyond code generation towards intelligent engineering tool interaction."
       ],
       architectureSteps: [
-        { step: "01", title: "Parametric Model Generation", description: "Generates adaptive structural geometry in Rhino/Grasshopper with mathematical controls." },
-        { step: "02", title: "Rhino.Inside Revit Translation", description: "Pushes geometric curves into native Revit analytical and physical structural framing families." },
-        { step: "03", title: "Tekla Steel Detailing Pipeline", description: "Directly instantiates structural steel profiles and connection workpoints inside Tekla Structures." },
-        { step: "04", title: "Audit & Version Difference Check", description: "Logs structural member volume and weight changes across project revisions." }
+        {
+          step: "01",
+          title: "Natural Language Engineering Intent",
+          description: "Accepts engineering requirements through natural language prompts, including structural dimensions, geometry, material properties, support conditions, and loading information."
+        },
+        {
+          step: "02",
+          title: "AI-Based Intent Interpretation",
+          description: "Uses LLM-powered reasoning to interpret engineering instructions, identify structural components, resolve parameters, and translate requirements into a structured analytical model representation."
+        },
+        {
+          step: "03",
+          title: "Analytical Model Construction",
+          description: "Constructs the structural model using a structured engineering representation of nodes, members, plates, sections, materials, supports, and loads. Generates STAAD.Pro-compatible analytical input files."
+        },
+        {
+          step: "04",
+          title: "Validation & Model Refinement",
+          description: "Performs automated syntax validation, error detection, and correction of generated models. Supports iterative refinement and exports models for OpenSees-based analysis and interactive Plotly visualization."
+        }
       ],
-      problemStatement: "Structural engineers and fabricators lose hundreds of hours reconciling differences between architectural Revit models, analytical ETABS files, and Tekla fabrication drawings.",
-      solutionOverview: "Engineered a unified parametric bridge using C# and Rhino.Inside that synchronizes structural intent across design, analysis, and fabrication environments simultaneously.",
-      demoType: "agent-flow"
-    }
+      problemStatement: "Creating analytical structural models requires specialized software knowledge, considerable manual effort, and repeated interactions with engineering modelling tools. Translating engineering requirements into nodes, members, properties, supports, and loading definitions creates a steep learning curve and introduces opportunities for modelling errors.",
+      solutionOverview: "Developed Structural Agentic Modeller (SAM), an AI-native engineering platform that connects natural language understanding with structured analytical modelling and engineering tool interaction. By combining LLM-powered reasoning, structured model representations, automated validation, and analytical software interoperability, SAM explores a new paradigm in which engineers communicate design intent while AI assists in constructing, validating, and refining analytical structural models.",
+      demoType: "structural-agentic-modeller"
+    },
+    
+
   ] as Project[],
 
   journey: [
@@ -255,43 +381,43 @@ export const BALAJI_DATA = {
     }
   ] as SkillCategory[],
 
-  digitalTwinKnowledge: [
-    {
-      keywords: ["background", "education", "nit", "calicut", "mtech", "experience", "who are you", "summary"],
-      question: "What is your background, education, and professional experience?",
-      answer: "I am Balaji Rajadurai, a postgraduate Structural Engineer with an M.Tech from NIT Calicut (National Institute of Technology Calicut) and over 10 years of experience in structural engineering, computational design, engineering optimization, and digital engineering. My work focuses on bridging conventional structural engineering with intelligent computational systems—developing engineering automation solutions, optimization frameworks, and AI-powered applications that understand engineering intent, construct structural models, perform analysis, validate solutions, and improve engineering workflows."
-    },
-    {
-      keywords: ["ai", "structural engineering", "combine", "agent", "intent", "how do you use ai"],
-      question: "How do you combine structural engineering with AI and computational systems?",
-      answer: "I approach AI not as a black box, but as an intelligent orchestration layer that sits on top of deterministic engineering mechanics. For example: LLMs and AI agents (built with LangGraph and Pydantic) excel at parsing messy architectural intent, extracting structural member loads, and mapping applicable building code clauses (IS 456, IS 800, Eurocode, ACI). However, all safety checks, moment distributions, and stress ratios are computed using exact, closed-form formulas and finite element matrix solvers. This guarantees zero hallucination while multiplying engineering productivity by 10x."
-    },
-    {
-      keywords: ["optimization", "genetic", "algorithm", "carbon", "steel", "weight", "truss"],
-      question: "What is your approach to structural optimization and material reduction?",
-      answer: "In structural design, standard practices often leave significant excess material because manual trial-and-error under deadline pressure forces conservative assumptions. I develop multi-objective optimization pipelines using Genetic Algorithms (such as NSGA-II) and gradient-based solvers. By parameterizing structural geometry in Grasshopper or Python, the algorithm evaluates thousands of candidate topologies—shifting nodal coordinates and sizing member profiles to minimize steel weight and embodied carbon while strictly satisfying deflection and allowable stress limits. On average, this delivers 18% to 26% material savings."
-    },
-    {
-      keywords: ["etabs", "sap2000", "api", "automation", "revit", "tekla", "bim"],
-      question: "How do you automate ETABS, SAP2000, and BIM modeling?",
-      answer: "I utilize the Open API (OAPI) of ETABS and SAP2000 alongside the Revit and Tekla APIs. By writing custom C# .NET and Python scripts, I parse architectural grid layouts, column placements, and floor polygons, snapping them to proper analytical tolerances. The system then automatically defines material grades, frame sections, rigid diaphragms, and seismic mass definitions, and distributes tributary slab loads to beams. This collapses initial structural modeling time from 3–4 days down to 15 minutes."
-    },
-    {
-      keywords: ["codes", "standards", "is 456", "is 800", "eurocode", "aci", "compliance"],
-      question: "Which structural design codes and standards do you work with?",
-      answer: "Over my 10+ years of professional practice, I have designed structures compliant with Indian Standards (IS 456 for concrete, IS 800 for steel, IS 1893 for earthquake resistant design, IS 875 for wind and imposed loads), European standards (Eurocode 2 for concrete, Eurocode 3 for steel, Eurocode 8 for seismic), and American codes (ACI 318, AISC 360, and ASCE 7). My automated systems verify member capacity, slenderness, crack widths, and detailing rules against these exact codal formulations."
-    },
-    {
-      keywords: ["contact", "hire", "consulting", "email", "reach", "collaborate", "services"],
-      question: "How can clients or teams collaborate with or hire you?",
-      answer: "You can reach me directly via email at balajir333@gmail.com. I am available for high-impact structural engineering projects, computational design consultancy, custom engineering automation tools (ETABS/Revit/Tekla API plugins), and AI-driven structural software development. I work with consulting engineering firms, architectural practices, and engineering software startups worldwide."
-    },
-    {
-      keywords: ["cv", "resume", "credentials", "projects"],
-      question: "Can I view your resume and project credentials?",
-      answer: "Yes! You can inspect my full Curriculum Vitae and download a verified copy by clicking the 'Curriculum Vitae' button in the navigation bar. You can also explore my projects across this portfolio: the AI Structural Code Compliance Agent, Generative Truss Optimization Engine, Intelligent FEM Modeling Automation, and Bidirectional BIM-to-FEM Synchronizer."
-    }
-  ],
+  // digitalTwinKnowledge: [
+  //   {
+  //     keywords: ["background", "education", "nit", "calicut", "mtech", "experience", "who are you", "summary"],
+  //     question: "What is your background, education, and professional experience?",
+  //     answer: "I am Balaji Rajadurai, a postgraduate Structural Engineer with an M.Tech from NIT Calicut (National Institute of Technology Calicut) and over 10 years of experience in structural engineering, computational design, engineering optimization, and digital engineering. My work focuses on bridging conventional structural engineering with intelligent computational systems—developing engineering automation solutions, optimization frameworks, and AI-powered applications that understand engineering intent, construct structural models, perform analysis, validate solutions, and improve engineering workflows."
+  //   },
+  //   {
+  //     keywords: ["ai", "structural engineering", "combine", "agent", "intent", "how do you use ai"],
+  //     question: "How do you combine structural engineering with AI and computational systems?",
+  //     answer: "I approach AI not as a black box, but as an intelligent orchestration layer that sits on top of deterministic engineering mechanics. For example: LLMs and AI agents (built with LangGraph and Pydantic) excel at parsing messy architectural intent, extracting structural member loads, and mapping applicable building code clauses (IS 456, IS 800, Eurocode, ACI). However, all safety checks, moment distributions, and stress ratios are computed using exact, closed-form formulas and finite element matrix solvers. This guarantees zero hallucination while multiplying engineering productivity by 10x."
+  //   },
+  //   {
+  //     keywords: ["optimization", "genetic", "algorithm", "carbon", "steel", "weight", "truss"],
+  //     question: "What is your approach to structural optimization and material reduction?",
+  //     answer: "In structural design, standard practices often leave significant excess material because manual trial-and-error under deadline pressure forces conservative assumptions. I develop multi-objective optimization pipelines using Genetic Algorithms (such as NSGA-II) and gradient-based solvers. By parameterizing structural geometry in Grasshopper or Python, the algorithm evaluates thousands of candidate topologies—shifting nodal coordinates and sizing member profiles to minimize steel weight and embodied carbon while strictly satisfying deflection and allowable stress limits. On average, this delivers 18% to 26% material savings."
+  //   },
+  //   {
+  //     keywords: ["etabs", "sap2000", "api", "automation", "revit", "tekla", "bim"],
+  //     question: "How do you automate ETABS, SAP2000, and BIM modeling?",
+  //     answer: "I utilize the Open API (OAPI) of ETABS and SAP2000 alongside the Revit and Tekla APIs. By writing custom C# .NET and Python scripts, I parse architectural grid layouts, column placements, and floor polygons, snapping them to proper analytical tolerances. The system then automatically defines material grades, frame sections, rigid diaphragms, and seismic mass definitions, and distributes tributary slab loads to beams. This collapses initial structural modeling time from 3–4 days down to 15 minutes."
+  //   },
+  //   {
+  //     keywords: ["codes", "standards", "is 456", "is 800", "eurocode", "aci", "compliance"],
+  //     question: "Which structural design codes and standards do you work with?",
+  //     answer: "Over my 10+ years of professional practice, I have designed structures compliant with Indian Standards (IS 456 for concrete, IS 800 for steel, IS 1893 for earthquake resistant design, IS 875 for wind and imposed loads), European standards (Eurocode 2 for concrete, Eurocode 3 for steel, Eurocode 8 for seismic), and American codes (ACI 318, AISC 360, and ASCE 7). My automated systems verify member capacity, slenderness, crack widths, and detailing rules against these exact codal formulations."
+  //   },
+  //   {
+  //     keywords: ["contact", "hire", "consulting", "email", "reach", "collaborate", "services"],
+  //     question: "How can clients or teams collaborate with or hire you?",
+  //     answer: "You can reach me directly via email at balajir333@gmail.com. I am available for high-impact structural engineering projects, computational design consultancy, custom engineering automation tools (ETABS/Revit/Tekla API plugins), and AI-driven structural software development. I work with consulting engineering firms, architectural practices, and engineering software startups worldwide."
+  //   },
+  //   {
+  //     keywords: ["cv", "resume", "credentials", "projects"],
+  //     question: "Can I view your resume and project credentials?",
+  //     answer: "Yes! You can inspect my full Curriculum Vitae and download a verified copy by clicking the 'Curriculum Vitae' button in the navigation bar. You can also explore my projects across this portfolio: the AI Structural Code Compliance Agent, Generative Truss Optimization Engine, Intelligent FEM Modeling Automation, and Bidirectional BIM-to-FEM Synchronizer."
+  //   }
+  // ],
   
   education: [
     {
@@ -446,7 +572,7 @@ export const BALAJI_DATA = {
       category: "Intellectual Property",
       organization: "L&T Construction",
       year: "2025",
-      image: "/awards/award-03.jpg",
+      image: "/awards/copyright-01.png",
       description:
         "Recognition associated with AI-based tender BOQ prediction for repetitive engineering structures."
     }

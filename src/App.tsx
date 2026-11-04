@@ -9,7 +9,6 @@ import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { Journey } from './components/Journey';
 import { Skills } from './components/Skills';
-import { DigitalTwin } from './components/DigitalTwin';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
@@ -25,11 +24,12 @@ export default function App() {
       if (stored) return stored === 'dark';
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
-    return false;
+    return true;
   });
 
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
+  const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
 
   // Sync darkMode with <html> element class
   useEffect(() => {
@@ -58,6 +58,7 @@ export default function App() {
           darkMode={darkMode}
           setDarkMode={setDarkMode}
           onOpenResume={() => setIsResumeOpen(true)}
+          onOpenDigitalTwin={() => setIsChatOpen(true)}
         />
 
         {/* Dynamic Page Views for Every Heading */}
@@ -88,14 +89,6 @@ export default function App() {
             <Skills />
           )}
 
-          {/* Page 5: Digital Twin Dedicated Page ("at the last") */}
-          {currentPage === 'digital-twin' && (
-            <DigitalTwin
-              onOpenResume={() => setIsResumeOpen(true)}
-              onExploreProjects={() => handleNavigate('projects')}
-            />
-          )}
-
           {/* Page 6: Contact & Direct Inquiries Page */}
           {currentPage === 'contact' && (
             <Contact />
@@ -106,7 +99,8 @@ export default function App() {
 
       {/* Persistent Floating Chat Widget (Present on EVERY Page) */}
       <FloatingChatbot
-        onOpenFullPageTwin={() => handleNavigate('digital-twin')}
+        isOpen={isChatOpen}
+        onOpenChange={setIsChatOpen}
       />
 
       {/* Footer */}
